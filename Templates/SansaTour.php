@@ -1,8 +1,13 @@
 <?php
-  //include "frontend_style.css";
   include "CodigoPHP/codeServer.php";
-  //include "frontend.html";
-
   CallStyle();
   SelectPage();
+
+  /* codigotemporal
+  include "frontend.html";
+  CallStyle("StyleCSS/frontend_style_boostrap.css");
+  include "frontend_style.css";
+
+
+  */
 ?>
