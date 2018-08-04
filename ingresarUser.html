@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SansaTour</title>
+  </head>
+  <body>
+    <aside>
+      <h1> SansaTour </h1>
+      <h2  style="text-align:center">
+        Iniciando sesion
+      </h2>
+      <p >
+        <form
+          action="?page=mainUser"
+          method="post"
+          style="color:white; text-align:center"
+        >
+          Rut:
+          <br>
+          <input type="text", name="rut">
+          <br>
+          Contraseña:
+          <br>
+          <input type="password" name="psw">
+          <br>
+          <br>
+          <input type="submit" value="Acceder">
+          <input type="reset" value="Reset">
+        </form>
+      </p>
+      <p style="text-align:center">
+        <br>
+        <input
+        type="button"
+        name="VolverToMain"
+        value="Cancelar ingreso"
+        style= "height:50px; width:200px; font-size:20px; background-color:#BB3333;"
+        onclick="window.location.href='?page=main'"
+        >
+      </p>
+      <br>
+
+    </aside>
+  </body>
+</html>
