@@ -47,4 +47,12 @@ function CallStyle($value="StyleCSS/frontend_style.css"){
   include $value;
 }
 
+function LookPost(){
+  foreach ($_POST as $key => $value) {
+    // code...
+    echo "<console>",$key, " : ", $value, "</console><br>";
+
+  }
+}
+
 ?>
