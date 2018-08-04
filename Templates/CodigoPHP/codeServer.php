@@ -9,13 +9,13 @@ function CallPage($value = NULL){
 }
 
 function SelectPage(){
-  $page_main = "main.html";
+  $page_main = "PaginasHTML/main.html";
   $page_main_name = "main";
-  $page_user = "mainUser.html";
+  $page_user = "PaginasHTML/mainUser.html";
   $page_user_name = "mainUser";
-  $page_ingresarUser = "ingresarUser.html";
+  $page_ingresarUser = "PaginasHTML/ingresarUser.html";
   $page_ingresarUser_name = "ingresarUser";
-  $page_registrarUser = "registrarUser.html";
+  $page_registrarUser = "PaginasHTML/registrarUser.html";
   $page_registrarUser_name = "registrarUser";
 
 
@@ -43,7 +43,7 @@ function SelectPage(){
   }
 }
 
-function CallStyle($value="frontend_style.css"){
+function CallStyle($value="StyleCSS/frontend_style.css"){
   include $value;
 }
 
