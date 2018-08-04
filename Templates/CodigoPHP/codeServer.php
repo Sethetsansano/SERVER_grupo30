@@ -1,4 +1,6 @@
 <?php
+$DataBase = null;
+$ConfigServer = null;
 
 function CallPage($value = NULL){
   if ($value === NULL) {
@@ -49,9 +51,48 @@ function CallStyle($value="StyleCSS/frontend_style.css"){
 
 function LookPost(){
   foreach ($_POST as $key => $value) {
-    // code...
     echo "<console>",$key, " : ", $value, "</console><br>";
+  }
+}
 
+function GetDataBase(){
+  //$GLOBALS['DataBase']
+  echo "<console>", "DataBase Conecting...", "</console><br>";
+
+  if ($GLOBALS['DataBase'] === null){
+    echo "<console>", "DataBase fail connect.", "</console><br>";
+  }
+  else{
+    echo "<console>", "DataBase conect", "</console><br>";
+  }
+}
+
+function GetConfigServer(){
+  $myFile = fopen("ConfigServer.txt", "r") or die("Unable to open file!");
+  $arrayFile = array();
+  while(!feof($myFile)){
+    $line = fgets($myFile);
+    $parts = explode("=", $line);
+    for ($i=0; $i < sizeof($parts); $i++) {
+      $parts[$i] = str_replace(' ', '', $parts[$i]);
+      $parts[$i] = str_replace(';', '', $parts[$i]);
+    }
+    $arrayFile[$parts[0]] = $parts[1];
+  }
+
+  $GLOBALS['ConfigServer'] = $arrayFile;
+  fclose($myFile);
+
+  CallConsole("hola console");
+}
+
+function CallConsole($mensaje){
+  if (!($GLOBALS['ConfigServer'] === null)){
+    if (isset($GLOBALS['ConfigServer']["Console"])){
+      if($GLOBALS['ConfigServer']["Console"]){
+        echo "<console>", $mensaje, "</console><br>";
+      }
+    }
   }
 }
 
