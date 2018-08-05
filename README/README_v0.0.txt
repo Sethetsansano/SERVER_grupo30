@@ -41,7 +41,7 @@ Instrucciones para tener acceso a la base de datos.
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
-	-Agregar la siguiente linea al final del archivo:
+	-Agregar al final la siguiente linea en el archivo:
 		listen_addresses = '*'
 	-Guardar el archivo.
 	-Luego en el mismo directorio (PostgreSQL\10\data)

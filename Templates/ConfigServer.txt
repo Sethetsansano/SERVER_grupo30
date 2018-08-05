@@ -1,7 +1,7 @@
 Console = true;
 DataBaseName = postgres;
 DataBasePath = ;
-DataBaseAddress = localhost;
+DataBaseAddress = 127.0.0.1;
 DataBasePort = 4333;
 DataBaseUser = postgres;
 DataBasePassword = ciri;
