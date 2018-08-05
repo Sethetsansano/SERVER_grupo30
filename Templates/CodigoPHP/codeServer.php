@@ -51,7 +51,7 @@ function CallStyle($value="StyleCSS/frontend_style.css"){
 
 function LookPost(){
   foreach ($_POST as $key => $value) {
-    CallConsole($key, " : ", $value);
+    CallConsole($key . ":" . $value);
   }
 }
 
