@@ -58,8 +58,17 @@ function LookPost(){
 function GetDataBase(){
   //$GLOBALS['DataBase']
   CallConsole("DataBase Conecting...");
+  $db_host = GetConfig("DataBaseAddress");
+  $db_name = GetConfig("DataBaseName");
+  $db_user = GetConfig("DataBaseUser");
+  $db_password = GetConfig("DataBasePassword");
+  $string_connect = "host=".$db_host." dbname=".$db_name." user=".$db_user." password=".$db_password."";
 
-  
+  $db_connection = pg_connect($string_connect);
+  $result = pg_query($db_connection, "SELECT nombre_linea FROM Lineas");
+  while ($row = pg_fetch_row($result)){
+	  CallConsole("Nombre de linea: $row[0]");
+  }
 
 
   if ($GLOBALS['DataBase'] === null){

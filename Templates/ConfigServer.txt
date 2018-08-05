@@ -1,5 +1,7 @@
 Console = true;
-DataBasePass = ;
-DataBasePort = ;
-DataBaseUser = ;
-DataBasePassword = ;
+DataBaseName = postgres;
+DataBasePath = ;
+DataBaseAddress = localhost;
+DataBasePort = 4333;
+DataBaseUser = postgres;
+DataBasePassword = ciri;

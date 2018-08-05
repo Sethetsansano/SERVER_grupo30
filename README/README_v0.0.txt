@@ -32,16 +32,16 @@ Como esta originalmente armado:
     b) Los archivos de la aplicación web deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
     c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost/SansaTour.php
 
-	
-	
+
+
 Como reconstruirlo desde otro computador o servidor:
-  
-  
+
+
 Instrucciones para tener acceso a la base de datos.
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
-	-Agregar la siguiente linea al final del archivo: 
+	-Agregar la siguiente linea al final del archivo:
 		listen_addresses = '*'
 	-Guardar el archivo.
 	-Luego en el mismo directorio (PostgreSQL\10\data)
@@ -57,9 +57,7 @@ Instrucciones para tener acceso a la base de datos.
 		-Dirigirse a la carpeta xampp/php
 		-Buscar el archivo php.ini
 		-Descomentar las siguientes lineas:
-			extensions=pgsql
-			extensions=pdo_pgsql
+			extension=pgsql
+			extension=pdo_pgsql
 		-Guardar el archivo
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
-
-
