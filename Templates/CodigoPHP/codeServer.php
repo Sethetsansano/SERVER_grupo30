@@ -89,7 +89,9 @@ function GetConfigServer(){
       $parts[$i] = str_replace(' ', '', $parts[$i]);
       $parts[$i] = str_replace(';', '', $parts[$i]);
     }
-    $arrayFile[$parts[0]] = $parts[1];
+    if (sizeof($parts) === 2){
+      $arrayFile[$parts[0]] = $parts[1];
+    }
   }
 
   $GLOBALS['ConfigServer'] = $arrayFile;
