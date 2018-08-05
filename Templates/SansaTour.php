@@ -20,6 +20,6 @@
   include "frontend.html";
   CallStyle("StyleCSS/frontend_style_boostrap.css");
   include "frontend_style.css";*/
-
+  GetListLineas();
   LookPost();
 ?>
