@@ -1,2 +1,5 @@
 Console = true;
-DataBasePass = "";
+DataBasePass = ;
+DataBasePort = ;
+DataBaseUser = ;
+DataBasePassword = ;
