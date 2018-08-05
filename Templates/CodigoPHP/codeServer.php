@@ -51,19 +51,22 @@ function CallStyle($value="StyleCSS/frontend_style.css"){
 
 function LookPost(){
   foreach ($_POST as $key => $value) {
-    echo "<console>",$key, " : ", $value, "</console><br>";
+    CallConsole($key, " : ", $value);
   }
 }
 
 function GetDataBase(){
   //$GLOBALS['DataBase']
-  echo "<console>", "DataBase Conecting...", "</console><br>";
+  CallConsole("DataBase Conecting...");
+
+  
+
 
   if ($GLOBALS['DataBase'] === null){
-    echo "<console>", "DataBase fail connect.", "</console><br>";
+    CallConsole("DataBase fail connect.");
   }
   else{
-    echo "<console>", "DataBase conect", "</console><br>";
+    CallConsole("DataBase conect");
   }
 }
 
@@ -83,17 +86,31 @@ function GetConfigServer(){
   $GLOBALS['ConfigServer'] = $arrayFile;
   fclose($myFile);
 
-  CallConsole("hola console");
+  CallConsole("ConfigLoad Comlete.");
 }
 
 function CallConsole($mensaje){
-  if (!($GLOBALS['ConfigServer'] === null)){
-    if (isset($GLOBALS['ConfigServer']["Console"])){
-      if($GLOBALS['ConfigServer']["Console"]){
-        echo "<console>", $mensaje, "</console><br>";
-      }
-    }
+  $value = GetConfig('Console');
+
+  if ($value === null){
+    return;
   }
+  if ($value){
+    echo "<console>", $mensaje, "</console><br>";
+  }
+}
+
+function GetConfig($config){
+  if ($GLOBALS['ConfigServer'] === null){
+    print "ConfigServer not load.";
+    return null;
+  }
+  if (!isset($GLOBALS['ConfigServer'][$config])){
+    print "Config not exist";
+    return null;
+  }
+
+  return $GLOBALS['ConfigServer'][$config];
 }
 
 ?>
