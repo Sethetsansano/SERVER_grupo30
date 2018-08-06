@@ -2,6 +2,8 @@
 $DataBase = null;
 $ConfigServer = null;
 
+//page
+
 function CallPage($value = NULL){
   if ($value === NULL) {
     return "NULL";
@@ -55,6 +57,55 @@ function LookPost(){
   }
 }
 
+function GetPost($data){
+  foreach ($_POST as $key => $value) {
+    if ($data === $key){
+      return $value;
+    }
+  }
+  return null;
+}
+
+
+//Config server
+
+function GetConfig($config){
+  if ($GLOBALS['ConfigServer'] === null){
+    print "ConfigServer not load.";
+    return null;
+  }
+  if (!isset($GLOBALS['ConfigServer'][$config])){
+    print "Config not exist";
+    return null;
+  }
+
+  return $GLOBALS['ConfigServer'][$config];
+}
+
+
+function GetConfigServer(){
+  $myFile = fopen("ConfigServer.txt", "r") or die("Unable to open file!");
+  $arrayFile = array();
+  while(!feof($myFile)){
+    $line = fgets($myFile);
+    $parts = explode("=", $line);
+    for ($i=0; $i < sizeof($parts); $i++) {
+      $parts[$i] = str_replace(' ', '', $parts[$i]);
+      $parts[$i] = str_replace(';', '', $parts[$i]);
+    }
+    if (sizeof($parts) === 2){
+      $arrayFile[$parts[0]] = $parts[1];
+    }
+  }
+
+  $GLOBALS['ConfigServer'] = $arrayFile;
+  fclose($myFile);
+
+  CallConsole("ConfigLoad Complete.");
+}
+
+//Data base
+
 function GetDataBase(){
   //$GLOBALS['DataBase']
   CallConsole("DataBase Conecting...");
@@ -83,34 +134,23 @@ function GetDataBase(){
   }
 }
 
-function GetConfigServer(){
-  $myFile = fopen("ConfigServer.txt", "r") or die("Unable to open file!");
-  $arrayFile = array();
-  while(!feof($myFile)){
-    $line = fgets($myFile);
-    $parts = explode("=", $line);
-    for ($i=0; $i < sizeof($parts); $i++) {
-      $parts[$i] = str_replace(' ', '', $parts[$i]);
-      $parts[$i] = str_replace(';', '', $parts[$i]);
-    }
-    if (sizeof($parts) === 2){
-      $arrayFile[$parts[0]] = $parts[1];
-    }
-  }
-
-  $GLOBALS['ConfigServer'] = $arrayFile;
-  fclose($myFile);
-
-  CallConsole("ConfigLoad Comlete.");
-}
-
 function GetListLineas(){
   $list = pg_query($GLOBALS['DataBase'], "SELECT nombre_linea FROM Lineas");
   while ($row = pg_fetch_row($list)){
-	  CallConsole("Nombre de linea: $row[0]");
+    CallConsole("Nombre de linea: $row[0]");
   }
   return $list;
 }
+
+function AddUser(){
+  $rut = GetPost("user_rut");
+  $psw = GetPost("user_psw");
+  $name = GetPost("user_name");
+
+  $query = pg_query($GLOBALS['DataBase'], "INSERT INTO ")
+}
+
+//Console
 
 function CallConsole($mensaje){
   $value = GetConfig('Console');
@@ -122,18 +162,4 @@ function CallConsole($mensaje){
     echo "<console>", $mensaje, "</console><br>";
   }
 }
-
-function GetConfig($config){
-  if ($GLOBALS['ConfigServer'] === null){
-    print "ConfigServer not load.";
-    return null;
-  }
-  if (!isset($GLOBALS['ConfigServer'][$config])){
-    print "Config not exist";
-    return null;
-  }
-
-  return $GLOBALS['ConfigServer'][$config];
-}
-
 ?>

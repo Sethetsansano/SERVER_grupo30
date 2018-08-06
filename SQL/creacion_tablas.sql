@@ -1,4 +1,4 @@
-DROP TABLE Persona;
+DROP TABLE Personas;
 DROP TABLE Lineas;
 DROP TABLE Ciudades;
 DROP TABLE Terminales;
@@ -7,13 +7,13 @@ DROP TABLE Empleados;
 DROP TABLE Buses;
 DROP TABLE Turnos;
 DROP TABLE EMP_TURNOS;
-DROP TABLE Origen;
-DROP TABLE Destino;
+DROP TABLE Origenes;
+DROP TABLE Destinos;
 DROP TABLE Recorridos;
 DROP TABLE Tickets;
 DROP TABLE Empleados_Recorridos;
 
-CREATE TABLE Persona(
+CREATE TABLE Personas(
 	ID_cuenta INT PRIMARY KEY,
 	nombre_usuario VARCHAR(45) UNIQUE NOT NULL,
 	contraseña VARCHAR(45) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE Agencias(
 CREATE TABLE Empleados(
 	ID_empleado INT PRIMARY KEY,
 	tipo_empleado VARCHAR(15),
-	ID_cuenta INT REFERENCES Persona(ID_cuenta),
+	ID_cuenta INT REFERENCES Personas(ID_cuenta),
 	ID_agencia INT REFERENCES Agencias(ID_agencia)
 );
 
@@ -74,12 +74,12 @@ CREATE TABLE EMP_TURNOS(
 	PRIMARY KEY (ID_empleado, ID_turno)
 );
 
-CREATE TABLE Origen(
+CREATE TABLE Origenes(
 	ID_origen INT PRIMARY KEY,
 	ID_ciudad INT REFERENCES Ciudades(ID_ciudad) NOT NULL
 );
 
-CREATE TABLE Destino(
+CREATE TABLE Destinos(
 	ID_destino INT PRIMARY KEY,
 	ID_ciudad INT REFERENCES Ciudades(ID_ciudad) NOT NULL
 );
@@ -91,8 +91,8 @@ CREATE TABLE Recorridos(
 	nombre_recorrido VARCHAR(45),
 	tiempo_viaje INT NOT NULL,
 	precio INT NOT NULL,
-	ID_origen INT REFERENCES Origen(ID_origen),
-	ID_destino INT REFERENCES Destino(ID_destino),
+	ID_origen INT REFERENCES Origenes(ID_origen),
+	ID_destino INT REFERENCES Destinos(ID_destino),
 	ID_bus INT REFERENCES Buses(ID_bus)
 );
 

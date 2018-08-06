@@ -1,5 +1,5 @@
 Console = true;
-DataBaseName = Tarea2;
+DataBaseName = Tarea2_1;
 DataBasePath = ;
 DataBaseAddress = 127.100.89.2;
 DataBasePort = 5123;
