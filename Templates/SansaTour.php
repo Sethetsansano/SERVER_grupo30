@@ -14,7 +14,8 @@
   CallStyle();
   SelectPage();
 
-
+  AddUser();
+  GetAllUsers();
 
   /* codigotemporal
   include "frontend.html";
