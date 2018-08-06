@@ -37,7 +37,7 @@ Como esta originalmente armado:
 Como reconstruirlo desde otro computador o servidor:
 
 
-Instrucciones para tener acceso a la base de datos.
+*Instrucciones para tener acceso a la base de datos.
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
@@ -53,7 +53,7 @@ Instrucciones para tener acceso a la base de datos.
 
 
 
-	-Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
+*	-Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
 		-Dirigirse a la carpeta xampp/php
 		-Buscar el archivo php.ini
 		-Descomentar las siguientes lineas:
@@ -61,3 +61,14 @@ Instrucciones para tener acceso a la base de datos.
 			extension=pdo_pgsql
 		-Guardar el archivo
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
+
+*Configurar servidor
+  -Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
+  -Mantener la estructura de "variable = valor;" para cada linea
+  -Mantener mayusculas y minusculas cuando corresponda.
+  -Para confirurar la coneccion a la base de datos:
+    -En DataBaseName, ingresar el nombre la base de datos.
+    -En DataBaseAddress, ingresar el IP address de la base de datos, si esta se encuentra en el computador actual ingresar 127.0.0.1 como direccion o usar el "host address" que se encuentra en las propiedades del servidor en la pestaña de coneccion.
+    -En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de coneccion del servidor que contenga la base de datos a usar.
+    -En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
+    -En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
