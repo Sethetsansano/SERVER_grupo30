@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="StyleCSS/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="StyleCSS/Bootstrap/css/custom.css">
+    <title>SansaTour</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-3" align="center">SansaTour</h1>
+          <hr class="my-4">
+          <h4 align="center">Bienvenido <?php if ($name){echo $name;}else{echo "anónimo";}?></h4>
+        </div>
+    <aside>
+
+
+      <p style="text-align:center">
+        Si desea un comprar tiquet entre en buscar recorridos
+        <br>
+        <input
+          type="button"
+          name=""
+          value="Buscar Recorridos"
+          >
+      </p>
+      <p style="text-align:center">
+        Si ya ha finalizado su compra y quiere cerrar su sesion
+        <br>
+        <input
+          type="button"
+          name=""
+          value="Cerrar Sesion de Usuario"
+          onclick="window.location.href='?name=main'"
+          >
+      </p>
+      <br>
+
+    </aside>
+  </body>
+</html>

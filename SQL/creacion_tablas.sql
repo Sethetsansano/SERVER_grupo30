@@ -65,7 +65,6 @@ CREATE TABLE Turnos(
 	ID_turno INT PRIMARY KEY,
 	hora_inicio TIMESTAMP NOT NULL,
 	hora_termino TIMESTAMP NOT NULL,
-	dia DATE NOT NULL
 );
 
 CREATE TABLE EMP_TURNOS(
@@ -86,10 +85,9 @@ CREATE TABLE Destinos(
 
 CREATE TABLE Recorridos(
 	ID_recorrido INT PRIMARY KEY,
-	fecha_salida DATE NOT NULL,
 	horario_salida TIMESTAMP NOT NULL,
 	nombre_recorrido VARCHAR(45),
-	tiempo_viaje INT NOT NULL,
+	llegada_estimada TIMESTAMP NOT NULL,
 	precio INT NOT NULL,
 	ID_origen INT REFERENCES Origenes(ID_origen),
 	ID_destino INT REFERENCES Destinos(ID_destino),

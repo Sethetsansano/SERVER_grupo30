@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="StyleCSS/Bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="StyleCSS/Bootstrap/css/custom.css">
+    <title>SansaTour</title>
+  </head>
+  <body>
+    <div class="container">
+  			<div class="jumbotron">
+  				<h1 class="display-3" align="center">SansaTour</h1>
+  				<hr class="my-4">
+          <h4 align="center">Registro de usuario</h4>
+  			</div>
+
+        <form action="register.php" method="post" onsubmit="return UserDataValidation()" >
+
+              <div class="alert alert-danger alert-dismissable" role="alert" id="error" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!-- <p>
+                </p> -->
+              </div>
+              <p>
+                <div>
+                  <p>
+                    <div>
+                      <label for="username-id">Nombre usuario</label>
+                      <input type="text" id="username" class="form-control" name="user_name">
+                    </div>
+                  </p>
+
+                  <p>
+                    <div>
+                      <label>Contraseña</label>
+                      <input type="password" id="password" class="form-control" name="user_psw">
+                    </div>
+                  </p>
+
+                  <p>
+                    <div>
+                      <label>Confirme contraseña</label>
+                      <input type="password" class="form-control" id="password-confirmation" name="user_psw_confirmation" placeholder="Confirme contraseña">
+                    </div>
+                  </p>
+
+                  <p>
+                    <div>
+                      <label>Nombre</label>
+                      <input type="text" id="person-name" class="form-control" name="person-name">
+                    </div>
+                  </p>
+
+                  <p>
+                    <div>
+                      <label>Ingrese email</label>
+                      <input type="text" class="form-control" id="mail" name="user_email" placeholder="Ingrese email">
+                    </div>
+                  </p>
+
+                  <p>
+                    <div>
+                      <label>Ingrese RUT</label>
+                      <input type="text" class="form-control" id="rut" name="user_rut" placeholder="xxxxxxxx-x">
+                    </div>
+                  </p>
+                </div>
+              </p>
+              <p>
+                <div align="center">
+                  <button class="btn btn-success" type="submit" name="register">Registrarme</button>
+                  <button class="btn btn-danger" type="reset" value="Resetear campos">Resetear campos</button>
+                </div>
+              </p>
+          </form>
+
+          <form action="SansaTour.php">
+              <input class="btn btn-primary" type="submit" value="Cancelar registro">
+          </form>
+
+    </div>
+    <script src="js/validation.js"></script>
+    <script src="StyleCSS/Bootstrap/js/bootstrap.js"></script>
+    <script src="StyleCSS/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="StyleCSS/Bootstrap/js/npm.js"></script>
+  </body>
+</html>
