@@ -38,9 +38,9 @@ function GetListLineas(){
   return $list;
 }
 
-function ExistUserName($name){
+function IsValidLogin($name, $psw){
   if ($GLOBALS['DataBase'] === null) return null;
-  $query = pg_query($GLOBALS['DataBase'], "SELECT nombre_usuario FROM Personas;");
+  $query = pg_query($GLOBALS['DataBase'], "SELECT nombre FROM Personas WHERE nombre_usuario = '$name' AND contraseña = '$psw';");
   while ($row = pg_fetch_row($query)) {
     if ($row[0] === $name){
       return true;

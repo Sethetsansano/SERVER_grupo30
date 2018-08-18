@@ -5,6 +5,13 @@ function UserDataValidation(){
     uname.focus();
     return false;
   }
+
+  var nombre = document.getElementById('person-name');
+  if (!nombre.value){
+    ShowAlert("Debe ingresar su nombre.");
+    nombre.focus();
+    return false;
+  }
   var password = document.getElementById('password');
   if(!password.value){
     ShowAlert("Debe ingresar contraseña.");
@@ -22,12 +29,6 @@ function UserDataValidation(){
       passwordConfirmation.focus();
       return false;
     }
-  }
-  var nombre = document.getElementById('person-name');
-  if (!nombre.value){
-    ShowAlert("Debe ingresar su nombre.");
-    nombre.focus();
-    return false;
   }
   return true;
 }
@@ -47,6 +48,20 @@ function FilterValidation(){
   return true;
 }
 
+function ValidateSeatsSelected(){
+  var seatsSelected = document.getElementsByName("seatsValue[]");
+  for (k = 0; k < seatsSelected.length; k++){
+    if (seatsSelected[k].checked)
+      return true;
+  }
+  ShowAlert("Debe seleccionar al menos un asiento para continuar.");
+  return false;
+}
+
+
+function ShowErrorMessage(){
+  ShowAlert("Usuario y/o contraseña incorrectos. Reintente.");
+}
 
 
 function ShowAlert(msg){

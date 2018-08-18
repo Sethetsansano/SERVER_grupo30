@@ -21,62 +21,88 @@
                 <!-- <p>
                 </p> -->
               </div>
-              <p>
-                <div>
-                  <p>
-                    <div>
-                      <label for="username-id">Nombre usuario</label>
-                      <input type="text" id="username" class="form-control" name="user_name">
-                    </div>
-                  </p>
 
-                  <p>
-                    <div>
-                      <label>Contraseña</label>
-                      <input type="password" id="password" class="form-control" name="user_psw">
-                    </div>
-                  </p>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  Ingrese su información
+                </div>
+                <div class="panel-body">
 
-                  <p>
-                    <div>
-                      <label>Confirme contraseña</label>
-                      <input type="password" class="form-control" id="password-confirmation" name="user_psw_confirmation" placeholder="Confirme contraseña">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>
+                        <div>
+                          <label for="username-id">Nombre usuario</label>
+                          <input type="text" id="username" class="form-control" name="user_name">
+                        </div>
+                      </p>
                     </div>
-                  </p>
-
-                  <p>
-                    <div>
-                      <label>Nombre</label>
-                      <input type="text" id="person-name" class="form-control" name="person-name">
+                    <div class="col-md-6">
+                      <p>
+                        <div>
+                          <label>Nombre</label>
+                          <input type="text" id="person-name" class="form-control" name="person-name">
+                        </div>
+                      </p>
                     </div>
-                  </p>
-
-                  <p>
-                    <div>
-                      <label>Ingrese email</label>
-                      <input type="text" class="form-control" id="mail" name="user_email" placeholder="Ingrese email">
+                  </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <div>
+                            <label>Contraseña</label>
+                            <input type="password" id="password" class="form-control" name="user_psw">
+                          </div>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <div>
+                            <label>Confirme contraseña</label>
+                            <input type="password" class="form-control" id="password-confirmation" name="user_psw_confirmation" placeholder="Confirme contraseña">
+                          </div>
+                        </p>
+                      </div>
                     </div>
-                  </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <div>
+                            <label>Ingrese email</label>
+                            <input type="text" class="form-control" id="mail" name="user_email">
+                          </div>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <div>
+                            <label>Ingrese RUT</label>
+                            <input type="text" class="form-control" id="rut" name="user_rut" placeholder="xxxxxxxx-x">
+                          </div>
+                        </p>
+                      </div>
+                    </div>
 
+                </div>
+                <div class="row">
                   <p>
-                    <div>
-                      <label>Ingrese RUT</label>
-                      <input type="text" class="form-control" id="rut" name="user_rut" placeholder="xxxxxxxx-x">
+                    <div align="center">
+                      <button class="btn btn-success" type="submit" name="register">Registrarme</button>
+                      <button class="btn btn-danger" type="reset" value="Resetear campos">Resetear campos</button>
                     </div>
                   </p>
                 </div>
-              </p>
-              <p>
-                <div align="center">
-                  <button class="btn btn-success" type="submit" name="register">Registrarme</button>
-                  <button class="btn btn-danger" type="reset" value="Resetear campos">Resetear campos</button>
-                </div>
-              </p>
-          </form>
+              </div>
 
-          <form action="SansaTour.php">
-              <input class="btn btn-primary" type="submit" value="Cancelar registro">
+
           </form>
+          <p>
+            <form action="SansaTour.php">
+                <input class="btn btn-primary" type="submit" value="Cancelar registro">
+            </form>
+          </p>
+
+
 
     </div>
     <script src="js/validation.js"></script>

@@ -74,8 +74,26 @@
                     echo "<td> $pieces_llegada[1]</td>";
                     echo "<td> $pieces_salida[0]</td>";
                     echo "<td> $row[5]</td>";
-                     // style="display:none"
+
+                    //Aca hay que verificar el tipo de usuario logueado, la idea sería igual poder habilitar
+                    //un tipoUsuario por defecto, es decir, anonimo, en ese caso se desplegaría solo el listado
+                    //de recorridos disponibles sin tener acceso a comprar.
+                    //Habría que eliminar la linea que esta abajo y descomentar las de abajo
+                    //Guardando el tipo de usuario en la variable $tipoUsuario
                     echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Comprar</button></td>';
+
+                    // if ($tipoUsuario === 'Vendedor'){
+                    //   echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Vender</button></td>';
+                    // }
+                    // else{
+                    //   if ($tipoUsuario !== 'Anonimo'){
+                    //     echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Comprar</button></td>';
+                    //   }
+                    // }
+                    // if ($tipoUsuario === 'Gerente'){
+                    //   echo '<td><button class="btn btn-primary" type="submit" name="edit_travel" value="'.$row[0].'">Editar</button></td>';
+                    // }
+
                     echo '</tr>';
                   }
                 ?>
@@ -84,9 +102,6 @@
           </div>
         </form>
         <p>
-          <form action="main.php">
-            <input class="btn btn-primary" type="submit" value="Volver al menú principal">
-          </form>
           <form action="main.php">
             <input class="btn btn-primary" type="submit" value="Volver al menú principal">
           </form>
