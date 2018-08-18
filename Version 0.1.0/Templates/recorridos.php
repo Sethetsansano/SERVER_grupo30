@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -80,19 +83,29 @@
                     //de recorridos disponibles sin tener acceso a comprar.
                     //Habría que eliminar la linea que esta abajo y descomentar las de abajo
                     //Guardando el tipo de usuario en la variable $tipoUsuario
-                    echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Comprar</button></td>';
 
-                    // if ($tipoUsuario === 'Vendedor'){
-                    //   echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Vender</button></td>';
-                    // }
-                    // else{
-                    //   if ($tipoUsuario !== 'Anonimo'){
-                    //     echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Comprar</button></td>';
-                    //   }
-                    // }
-                    // if ($tipoUsuario === 'Gerente'){
-                    //   echo '<td><button class="btn btn-primary" type="submit" name="edit_travel" value="'.$row[0].'">Editar</button></td>';
-                    // }
+
+                    if ($_SESSION['Authorized']){
+                      if (isset($_SESSION['TipoUsuario'])){
+                        $tipoUsuario = $_SESSION['TipoUsuario'];
+                      }
+                      else{
+                        $tipoUsuario = 'Anonimo';
+                      }
+                      if ($tipoUsuario === 'Vendedor'){
+                        echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Vender</button></td>';
+                      }
+                      else{
+                        if ($tipoUsuario !== 'Anonimo'){
+                          echo '<td><button class="btn btn-success" type="submit" name="view_detail" value="'.$row[0].'">Comprar</button></td>';
+                        }
+                      }
+                      if ($tipoUsuario === 'Gerente'){
+                        echo '<td><button class="btn btn-primary" type="submit" name="edit_travel" value="'.$row[0].'">Editar</button></td>';
+                      }
+
+                    }
+
 
                     echo '</tr>';
                   }
@@ -101,16 +114,51 @@
             </table>
           </div>
         </form>
+
+        <?php
+          if ($_SESSION['TipoUsuario']){
+            $tipoUsuario = $_SESSION['TipoUsuario'];
+            if ($tipoUsuario === 'Gerente'){
+              echo '<p>';
+              echo '<form action="add_travel.php" method="post">';
+              echo '<input class="btn btn-primary" type="submit" name="addRecorrido" value="Agregar nuevo recorrido">';
+              echo '</form>';
+              echo '</p>';
+            }
+          }
+        ?>
+
         <p>
           <form action="main.php">
             <input class="btn btn-primary" type="submit" value="Volver al menú principal">
           </form>
         </p>
-        <p>
-        <form action="SansaTour.php">
-            <input class="btn btn-danger" type="submit" value="Cerrar sesión">
-        </form>
-        </p>
+
+        <?php
+          if ($_SESSION['TipoUsuario']){
+            $tipo = $_SESSION['TipoUsuario'];
+            if ($tipo === 'Anonimo'){
+              echo '<p>';
+              echo '<form action="login.php" method="post">';
+              echo '<input class="btn btn-primary" type="submit" name="login" value="Iniciar sesión">';
+              echo '</form>';
+              echo '</p>';
+              echo '<p>';
+              echo '<form action="register.php" method="post">';
+              echo '<input class="btn btn-primary" type="submit" name="register" value="Registrarme">';
+              echo '</form>';
+              echo '</p>';
+
+            }else{
+              echo '<p>';
+              echo '<form action="SansaTour.php" method="post">';
+              echo '<input class="btn btn-danger" type="submit" name="logout" value="Cerrar sesión">';
+              echo '</form>';
+              echo '</p>';
+            }
+          }
+         ?>
+
     </div>
     <script src="js/validation.js"></script>
     <script src="StyleCSS/Bootstrap/js/bootstrap.js"></script>

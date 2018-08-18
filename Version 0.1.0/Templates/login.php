@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -61,16 +64,6 @@
                  </div>
                </div>
              </div>
-
-
-
-
-
-
-
-
-
-
            </form>
 
            <form action="SansaTour.php">

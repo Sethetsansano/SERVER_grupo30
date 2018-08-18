@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -11,13 +14,16 @@
       include "CodigoPHP/codeServer.php";
       GetConfigServer();
       GetDataBase();
-      $name = Get("name");
+      if (isset($_SESSION['NombreUsuario'])){
+        $nombreUsuario = $_SESSION['NombreUsuario'];
+      }
+
      ?>
     <div class="container">
         <div class="jumbotron">
           <h1 class="display-3" align="center">SansaTour</h1>
           <hr class="my-4">
-          <h4 align="center">Bienvenido <?php if ($name){echo $name;}else{echo "anónimo";}?></h4>
+          <h4 align="center">Bienvenido, <?php if ($nombreUsuario){echo $nombreUsuario;}else{echo "anónimo";}?></h4>
         </div>
         <div>
           <form action="recorridos.php" method="post" onsubmit="return FilterValidation()">
@@ -57,10 +63,41 @@
               </div>
             </p>
           </form>
-          <form action="SansaTour.php">
-              <input class="btn btn-danger" type="submit" value="Cerrar sesión">
-          </form>
-
+                  <?php
+                    if ($_SESSION['TipoUsuario']){
+                      $tipoUsuario = $_SESSION['TipoUsuario'];
+                      if ($tipoUsuario === 'Gerente'){
+                        echo '<p>';
+                        echo '<form action="add_city.php" method="post">';
+                        echo '<input class="btn btn-primary" type="submit" name="addCity" value="Agregar destino">';
+                        echo '</form>';
+                        echo '</p>';
+                      }
+                    }
+                  ?>
+          <?php
+            if ($_SESSION['TipoUsuario']){
+              $tipo = $_SESSION['TipoUsuario'];
+              if ($tipo === 'Anonimo'){
+                echo '<p>';
+                echo '<form action="login.php" method="post">';
+                echo '<input class="btn btn-primary" type="submit" name="login" value="Iniciar sesión">';
+                echo '</form>';
+                echo '</p>';
+                echo '<p>';
+                echo '<form action="register.php" method="post">';
+                echo '<input class="btn btn-primary" type="submit" name="register" value="Registrarme">';
+                echo '</form>';
+                echo '</p>';
+              }else{
+                echo '<p>';
+                echo '<form action="SansaTour.php" method="post">';
+                echo '<input class="btn btn-danger" type="submit" name="logout" value="Cerrar sesión">';
+                echo '</form>';
+                echo '</p>';
+              }
+            }
+           ?>
         </div>
     </div>
     <script src="js/validation.js"></script>

@@ -58,6 +58,35 @@ function ValidateSeatsSelected(){
   return false;
 }
 
+function ValidateTravel(){
+
+  var horarioSalida = document.getElementById("horario-salida-id");
+  if (!horarioSalida.value){
+    ShowAlert("Debe ingresar horario de salida");
+    return false;
+  }
+  var horarioLlegada = document.getElementById("llegada-estimada-id");
+  if (!horarioLlegada.value){
+    ShowAlert("Debe ingresar horario de llegada");
+    return false;
+  }
+  var nombre = document.getElementById("id-nombre");
+  if (!nombre.value){
+    ShowAlert("Debe ingresar nombre de recorrido");
+    return false;
+  }
+  var precio = document.getElementById("precio");
+  if (!precio.value){
+    ShowAlert("Debe ingresar precio del recorrido");
+    return false;
+  }
+  var cities = FilterValidation();
+  if (cities){
+    return true;
+  }
+  return false;
+}
+
 
 function ShowErrorMessage(){
   ShowAlert("Usuario y/o contraseña incorrectos. Reintente.");

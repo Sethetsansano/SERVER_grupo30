@@ -11,8 +11,11 @@
       include "CodigoPHP/codeServer.php";
       GetConfigServer();
       GetDataBase();
+      $edit = Get("edit_travel");
+      if ($edit){
+        header("location: /edit.php?travel=$edit");
+      }
       $recorrido = Get("view_detail");
-      echo $GLOBALS['NombreUsuario'];
      ?>
     <div class="container">
         <div class="jumbotron">

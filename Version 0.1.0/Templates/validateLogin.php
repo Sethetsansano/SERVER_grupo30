@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include "CodigoPHP/codeServer.php";
   GetConfigServer();
   GetDataBase();
@@ -9,15 +10,18 @@
     $row = pg_fetch_row($query);
     if ($row){
       if ($row[1] == GetPost("logged_user")){
-        $GLOBALS['NombreUsuario'] = $row[4];
+        $_SESSION['NombreUsuario'] =  "$row[4]";
+        echo print_r($_SESSION);
+        // $_GLOBALS['NombreUsuario'] = $row[4];
         $empleado_query = pg_query($GLOBALS['DataBase'], "SELECT * FROM Empleados WHERE id_cuenta = $row[0]");
         $fila = pg_fetch_row($empleado_query);
         if ($fila){
-          $GLOBALS['TipoEmpleado'] = $fila[1];
+          $_SESSION['TipoUsuario'] = $fila[1];
         }
         else{
-          $GLOBALS['TipoEmpleado'] = '';
+          $_SESSION['TipoUsuario'] = 'Usuario';
         }
+        $_SESSION['Authorized'] = true;
         header("location: /main.php");
       }
     }
