@@ -15,15 +15,27 @@
       GetConfigServer();
       GetDataBase();
       if (isset($_POST['view'])){
+        $fecha = GetPost("fecha_viaje");
         $origen = explode("_",$_POST['origen']);
         $origen_id = $origen[0];
         $destino = explode("_",$_POST['destino']);
         $destino_id = $destino[0];
-        $query = pg_query($GLOBALS['DataBase'], "SELECT id_recorrido, id_origen, id_destino, horario_salida, llegada_estimada, precio
-	                                                 FROM Recorridos
-                                                    WHERE id_origen  = $origen_id AND
-                                                          id_destino = $destino_id
-	                                                         ORDER BY horario_salida;");
+        if (!$fecha){
+          $query = pg_query($GLOBALS['DataBase'], "SELECT id_recorrido, id_origen, id_destino, horario_salida, llegada_estimada, precio
+  	                                                 FROM Recorridos
+                                                      WHERE id_origen  = $origen_id AND
+                                                            id_destino = $destino_id
+  	                                                         ORDER BY horario_salida;");
+
+        }
+        else{
+          $query = pg_query($GLOBALS['DataBase'], "SELECT id_recorrido, id_origen, id_destino, horario_salida, llegada_estimada, precio
+  	                                                 FROM Recorridos
+                                                      WHERE id_origen  = $origen_id AND
+                                                            id_destino = $destino_id AND
+                                                            horario_salida >= '$fecha'
+  	                                                         ORDER BY horario_salida;");
+        }
       }
       else{
         $query = pg_query($GLOBALS['DataBase'], "SELECT id_recorrido, id_origen, id_destino, horario_salida, llegada_estimada, precio
