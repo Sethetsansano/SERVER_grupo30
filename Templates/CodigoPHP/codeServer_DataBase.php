@@ -78,6 +78,17 @@ function AddUser(){
   return true;
 }
 
+function ExistUserName($name){
+  if ($GLOBALS['DataBase'] === null) return null;
+
+  $query = pg_query($GLOBALS['DataBase'], "SELECT e.* FROM Personas e WHERE e.nombre_usuario = '$name';");
+
+  if (pg_fetch_row($query)) return true;
+  return false;
+}
+
+
+
 function GetAllUsers(){
   if ($GLOBALS['DataBase'] === null) return null;
 

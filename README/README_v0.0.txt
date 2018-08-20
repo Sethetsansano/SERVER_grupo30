@@ -1,4 +1,4 @@
-Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gesti�n de SansaTour".
+﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gesti�n de SansaTour".
 
 Supuestos del sistema de gesti�n:
   1.-
@@ -72,3 +72,6 @@ Como reconstruirlo desde otro computador o servidor:
     -En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de coneccion del servidor que contenga la base de datos a usar.
     -En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
     -En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
+
+*Acceder a la pagina web:
+   -Ingresar a ..../Templates/SansaTour.php
