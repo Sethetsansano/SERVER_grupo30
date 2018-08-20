@@ -9,7 +9,7 @@
     $row = pg_fetch_row($query);
 
     if ($row){
-      header("location: /add_city.php");
+      header("location: ./add_city.php");
     }
     else{
       $max_idQuery = pg_query($GLOBALS['DataBase'], "SELECT MAX(id_ciudad) FROM Ciudades;");
@@ -23,7 +23,7 @@
       $insertCiudad = pg_query($GLOBALS['DataBase'], "INSERT INTO Ciudades VALUES ($max_id, '$nombre_ciudad');");
       $insertDestino = pg_query($GLOBALS['DataBase'], "INSERT INTO Destinos VALUES ((SELECT MAX(id_destino) FROM Destinos)+1, $max_id);");
       $insertOrigen = pg_query($GLOBALS['DataBase'], "INSERT INTO Origenes VALUES ((SELECT MAX(id_origen) FROM Origenes)+1, $max_id);");
-      header("location: /main.php");
+      header("location: ./main.php");
     }
   }
  ?>

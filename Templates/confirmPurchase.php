@@ -17,5 +17,5 @@
         $query = pg_query($GLOBALS['DataBase'], "INSERT INTO Tickets VALUES ((SELECT MAX(id_ticket) FROM Tickets WHERE id_recorrido = $recorrido)+1, $asientosElegidos[$i], $recorrido);");
     }
   }
-  header("location: /main.php");
+  header("location: ./main.php");
  ?>

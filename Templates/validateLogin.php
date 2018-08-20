@@ -34,7 +34,7 @@
 
   // if (isset($_POST['register'])){
   //   if (AddUser()){
-  //     header("location: /main.php?user=test");
+  //     header("location: ./main.php?user=test");
   //   }
   // }
  ?>

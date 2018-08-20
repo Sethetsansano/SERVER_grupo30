@@ -16,9 +16,9 @@
     $precio = GetPost("precio");
     //Si llego aca, los campos deberían estar completos ya.
     $query = pg_query($GLOBALS['DataBase'], "INSERT INTO Recorridos VALUES (SELECT MAX(id_recorrido) FROM RECORRIDOS, $horario_salida, '$nombre_recorrido', $llegada_estimada, $precio, $origen_id, $destino_id, $bus_id);");
-    header("location: /main.php");
+    header("location: ./main.php");
   }
   else{
-    header("location: /add_travel.php");
+    header("location: ./add_travel.php");
   }
  ?>

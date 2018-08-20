@@ -13,7 +13,7 @@
       GetDataBase();
       $edit = Get("edit_travel");
       if ($edit){
-        header("location: /edit.php?travel=$edit");
+        header("location: ./edit.php?travel=$edit");
       }
       $recorrido = Get("view_detail");
      ?>
