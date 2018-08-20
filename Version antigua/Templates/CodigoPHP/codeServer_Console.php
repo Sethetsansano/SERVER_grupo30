@@ -5,8 +5,8 @@ function CallConsole($mensaje){
   if ($value === null){
     return;
   }
-  // if ($value){
-  //   echo "<console>", $mensaje, "</console><br>";
-  // }
+  if ($value){
+    echo "<console>", $mensaje, "</console><br>";
+  }
 }
  ?>

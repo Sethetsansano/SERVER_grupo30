@@ -2,14 +2,20 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="StyleCSS/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="StyleCSS/Bootstrap/css/custom.css">
     <title>SansaTour</title>
   </head>
   <body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-3" align="center">SansaTour</h1>
+          <hr class="my-4">
+          <h4 align="center">Bienvenido <?php if ($name){echo $name;}else{echo "anónimo";}?></h4>
+        </div>
     <aside>
-      <h1> SansaTour </h1>
-      <h2  style="text-align:center">
-        Hola "nombre", <br>Bienvenido a transportes SansaTour
-      </h2>
+
+
       <p style="text-align:center">
         Si desea un comprar tiquet entre en buscar recorridos
         <br>
@@ -17,7 +23,6 @@
           type="button"
           name=""
           value="Buscar Recorridos"
-          style="height:70px; width:300px; font-size:35px; background-color:darkgreen"
           >
       </p>
       <p style="text-align:center">
@@ -27,7 +32,6 @@
           type="button"
           name=""
           value="Cerrar Sesion de Usuario"
-          style="height:70px; width:300px; font-size:20px; background-color:#BB3333"
           onclick="window.location.href='?name=main'"
           >
       </p>

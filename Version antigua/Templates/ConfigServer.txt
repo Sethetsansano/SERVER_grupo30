@@ -1,7 +1,7 @@
-Console = false;
-DataBaseName = Tarea2;
+Console = true;
+DataBaseName = postgres;
 DataBasePath = ;
 DataBaseAddress = 127.0.0.1;
-DataBasePort = 5432;
+DataBasePort = 4333;
 DataBaseUser = postgres;
 DataBasePassword = 8tuths3r;

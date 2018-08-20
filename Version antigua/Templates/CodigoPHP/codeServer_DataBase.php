@@ -3,7 +3,7 @@ $DataBase = null;
 
 function GetDataBase(){
   //$GLOBALS['DataBase']
-  CallConsole("Connecting to DB..");
+  CallConsole("DataBase Conecting...");
   $db_host = GetConfig("DataBaseAddress");
   $db_port = GetConfig("DataBasePort");
   $db_name = GetConfig("DataBaseName");
@@ -22,25 +22,25 @@ function GetDataBase(){
   $GLOBALS['DataBase'] = $db_connection;
 
   if ($GLOBALS['DataBase'] === null){
-    CallConsole("Failed to connect to database server.");
+    CallConsole("DataBase fail connect.");
   }
   else{
-    CallConsole("DB connected.");
+    CallConsole("DataBase conect");
   }
 }
 
 function GetListLineas(){
   if ($GLOBALS['DataBase'] === null) return null;
-  $list = pg_query($GLOBALS['DataBase'], "SELECT id_linea, nombre_linea FROM Lineas");
+  $list = pg_query($GLOBALS['DataBase'], "SELECT nombre_linea FROM Lineas");
   while ($row = pg_fetch_row($list)){
-    CallConsole("Nombre de linea: $row[1]");
+    CallConsole("Nombre de linea: $row[0]");
   }
   return $list;
 }
 
-function IsValidLogin($name, $psw){
+function ExistUserName($name){
   if ($GLOBALS['DataBase'] === null) return null;
-  $query = pg_query($GLOBALS['DataBase'], "SELECT nombre FROM Personas WHERE nombre_usuario = '$name' AND contraseña = '$psw';");
+  $query = pg_query($GLOBALS['DataBase'], "SELECT nombre_usuario FROM Personas;");
   while ($row = pg_fetch_row($query)) {
     if ($row[0] === $name){
       return true;
@@ -50,20 +50,11 @@ function IsValidLogin($name, $psw){
 }
 
 function AddUser(){
-  if ($GLOBALS['DataBase'] === null){
-    return false;
-  }
+  if ($GLOBALS['DataBase'] === null) return null;
 
   $psw = GetPost("user_psw");
-  $psw_confirmation = GetPost("user_psw_confirmation");
   $name = GetPost("user_name");
-  $email = GetPost("user_email");
-  $nombre = GetPost("person-name");
-  $rut = GetPost("user_rut");
-
-  if ($psw === null || $name === null || ExistUserName($name) || $psw !== $psw_confirmation || $psw === '' || $name === '' || $nombre === ''){
-    return false;
-  }
+  if ($psw === null || $name === null || ExistUserName($name)) return null;
 
   $maxid = pg_query($GLOBALS['DataBase'], "SELECT MAX(ID_cuenta) FROM Personas;");
   if ($maxid === false) {
@@ -74,8 +65,9 @@ function AddUser(){
     $maxid++;
   }
 
-  $query = pg_query($GLOBALS['DataBase'], "INSERT INTO Personas (ID_cuenta,nombre_usuario,contraseña, email, nombre, rut) VALUES ($maxid, '$name', '$psw', '$email', '$nombre', '$rut');");
-  return true;
+  $query = pg_query($GLOBALS['DataBase'], "INSERT INTO Personas (ID_cuenta,nombre_usuario,contraseña) VALUES ($maxid, '$name', '$psw');");
+
+  $rut = GetPost("user_rut");
 }
 
 function GetAllUsers(){

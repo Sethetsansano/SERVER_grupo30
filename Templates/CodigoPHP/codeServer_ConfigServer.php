@@ -4,11 +4,11 @@ $ConfigServer = null;
 
 function GetConfig($config){
   if ($GLOBALS['ConfigServer'] === null){
-    print "ConfigServer not load.";
+    print "The config server couldn't be loaded.";
     return null;
   }
   if (!isset($GLOBALS['ConfigServer'][$config])){
-    print "Config not exist";
+    print "Config does not exists.";
     return null;
   }
 
@@ -34,7 +34,7 @@ function GetConfigServer(){
   $GLOBALS['ConfigServer'] = $arrayFile;
   fclose($myFile);
 
-  CallConsole("ConfigLoad Complete.");
+  CallConsole("Successfully loaded config file.");
 }
 
 

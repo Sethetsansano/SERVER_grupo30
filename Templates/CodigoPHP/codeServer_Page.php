@@ -61,4 +61,12 @@ function GetPost($data){
   return null;
 }
 
+function Get($data){
+  foreach($_GET as $key => $value){
+    if ($data === $key){
+      return $value;
+    }
+  }
+}
+
  ?>
