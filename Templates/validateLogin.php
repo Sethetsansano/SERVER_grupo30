@@ -22,11 +22,11 @@
           $_SESSION['TipoUsuario'] = 'Usuario';
         }
         $_SESSION['Authorized'] = true;
-        header("location: /main.php");
+        header("location: ./main.php");
       }
     }
     else{
-      header("location: /login.php?unauthorized=true");
+      header("location: ./login.php?unauthorized=true");
     }
 
   }
