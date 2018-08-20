@@ -32,10 +32,22 @@
                <div class="row">
                  <div class="col-md-6">
                    <p>
+
                      <div>
                        <label for="horario_salida-id">Horario salida</label>
                        <input type="text" id="horario-salida-id" class="form-control" name="horario_salida">
                      </div>
+                    <!--
+                     <div class="form-group">
+                       <label for="horario_salida-id" class="col-md-2 control-label">Horario salida</label>
+                         <div class="input-group date form_time col-md-5" data-date="" data-date-format="dd-mm-yyyy hh:00:00" data-link-field="dtp_input3" data-link-format="hh:ii">
+                           <input class="form-control" name="horario_salida" type="text" value="" readonly>
+                           <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+             					    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                         </div>
+             				  <input type="hidden" id="horario_salida-id" value="" /><br/>
+                     </div>
+                   -->
                    </p>
                  </div>
                  <div class="col-md-6">
