@@ -75,3 +75,6 @@ Como reconstruirlo desde otro computador o servidor:
 
 *Acceder a la pagina web:
    -Ingresar a ..../Templates/SansaTour.php
+
+*Acceder como gerente 0:
+	-usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"

@@ -1,3 +1,4 @@
+
 --Ciudades + (Origen/Destino)
 INSERT INTO CIUDADES (id_ciudad, nombre_ciudad) VALUES (1, 'Santiago'), (2, 'Viña del Mar'), (3, 'Valparaíso');
 INSERT INTO ORIGENES (id_origen, id_ciudad) VALUES (1, 1), (2, 2), (3, 3);
@@ -5,6 +6,7 @@ INSERT INTO DESTINOS (id_destino, id_ciudad) VALUES (1,1), (2,2), (3, 3);
 
 
 --Personas
+INSERT INTO PERSONAS (ID_cuenta, nombre_usuario, contraseña, email, nombre, rut) VALUES (0, 'gerente', 'gerente', 'gerente@sansatour.cl', 'The boss agencia one', '99999999-9');
 INSERT INTO PERSONAS (ID_cuenta, nombre_usuario, contraseña, email, nombre, rut) VALUES (1, 'csepulveda', 'admin', 'csepulveda@sansatour.cl', 'Christian Sepúlveda', '18499342-2');
 INSERT INTO PERSONAS (ID_cuenta, nombre_usuario, contraseña, email, nombre, rut) VALUES (2, 'sgroselj', 'admin', 'sgroselj@sansatour.cl', 'Sebastian Groselj', '19180240-3');
 INSERT INTO PERSONAS (ID_cuenta, nombre_usuario, contraseña, email, nombre, rut) VALUES (3, 'jnova', 'javier', 'jnova@sansatour.cl', 'Javier Nova', '17227832-1');
@@ -27,6 +29,7 @@ INSERT INTO AGENCIAS VALUES (3, 'Agencia Valparaíso', 1, 3);
 --Empleados
 INSERT INTO EMPLEADOS VALUES (1, 'Conductor', 3, 1);
 INSERT INTO EMPLEADOS VALUES (2, 'Auxiliar', 4, 1);
+INSERT INTO EMPLEADOS VALUES (4, 'Gerente', 0, 1);
 
 select nombre, nombre_agencia from empleados, personas, agencias where empleados.id_cuenta = personas.id_cuenta and empleados.id_agencia = agencias.id_agencia;
 

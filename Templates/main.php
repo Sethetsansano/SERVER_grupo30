@@ -96,6 +96,19 @@
                       }
                     }
                   ?>
+
+                  <?php
+                    if ($_SESSION['TipoUsuario']){
+                      $tipoUsuario = $_SESSION['TipoUsuario'];
+                      if ($tipoUsuario === 'Gerente'){
+                        echo '<p>';
+                        echo '<form action="add_travel.php" method="post">';
+                        echo '<input class="btn btn-primary" type="submit" name="addRecorrido" value="Agregar nuevo recorrido">';
+                        echo '</form>';
+                        echo '</p>';
+                      }
+                    }
+                  ?>
           <?php
             if ($_SESSION['TipoUsuario']){
               $tipo = $_SESSION['TipoUsuario'];
