@@ -75,6 +75,9 @@ function AddUser(){
   }
 
   $query = pg_query($GLOBALS['DataBase'], "INSERT INTO Personas (ID_cuenta,nombre_usuario,contraseña, email, nombre, rut) VALUES ($maxid, '$name', '$psw', '$email', '$nombre', '$rut');");
+  $_SESSION['NombreUsuario'] = $nombre;
+  $_SESSION['TipoUsuario'] = 'Usuario';
+  $_SESSION['Authorized'] = true;
   return true;
 }
 

@@ -11,6 +11,7 @@
      <meta charset="utf-8">
      <link rel="stylesheet" href="StyleCSS/Bootstrap/css/bootstrap.min.css">
      <link rel="stylesheet" href="StyleCSS/Bootstrap/css/custom.css">
+     <link href="StyleCSS/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
      <title>SansaTour</title>
    </head>
    <body>
@@ -32,29 +33,30 @@
                <div class="row">
                  <div class="col-md-6">
                    <p>
-
-                     <div>
-                       <label for="horario_salida-id">Horario salida</label>
-                       <input type="text" id="horario-salida-id" class="form-control" name="horario_salida">
-                     </div>
-                    <!--
                      <div class="form-group">
-                       <label for="horario_salida-id" class="col-md-2 control-label">Horario salida</label>
-                         <div class="input-group date form_time col-md-5" data-date="" data-date-format="dd-mm-yyyy hh:00:00" data-link-field="dtp_input3" data-link-format="hh:ii">
-                           <input class="form-control" name="horario_salida" type="text" value="" readonly>
+                       <label for="dtp_input1" class="col-md-2 control-label">Fecha salida</label>
+                         <div class="input-group date form_time id="dtp_input1" col-md-5" data-date="" data-date-format="dd-mm-yyyy hh:00:00" data-link-field="dtp_input1" data-link-format="hh:ii">
+                           <input class="form-control" name="fecha_salida" type="text" value="" readonly>
                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
              					    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                          </div>
-             				  <input type="hidden" id="horario_salida-id" value="" /><br/>
+             				  <input type="hidden" id="dtp_input1" value="" /><br/>
                      </div>
-                   -->
                    </p>
                  </div>
+               </div>
+               <div class="row">
                  <div class="col-md-6">
+
                    <p>
-                     <div>
-                       <label for="llegada-estimada-id">Llegada estimada</label>
-                       <input type="text" id="llegada-estimada-id" class="form-control" name="llegada_estimada">
+                     <div class="form-group">
+                       <label for="dtp_input2" class="col-md-2 control-label">Fecha llegada</label>
+                         <div class="input-group date form_time id="dtp_input2" col-md-5" data-date="" data-date-format="dd-mm-yyyy hh:00:00" data-link-field="dtp_input2" data-link-format="hh:ii">
+                           <input class="form-control" name="fecha_llegada" type="text" value="" readonly>
+                           <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+             					    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                         </div>
+             				  <input type="hidden" id="dtp_input2" value="" /><br/>
                      </div>
                    </p>
                  </div>
@@ -143,6 +145,44 @@
       <script src="StyleCSS/Bootstrap/js/bootstrap.min.js"></script>
       <script src="StyleCSS/Bootstrap/js/jquery-3.3.1.min.js"></script>
       <script src="StyleCSS/Bootstrap/js/npm.js"></script>
+
+      <script type="text/javascript" src="StyleCSS/Bootstrap/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.es.js" charset="UTF-8"></script>
+      <script type="text/javascript">
+          $('.form_datetime').datetimepicker({
+              //language:  'fr',
+              weekStart: 1,
+              todayBtn:  1,
+      		autoclose: 1,
+      		todayHighlight: 1,
+      		startView: 2,
+      		forceParse: 0,
+              showMeridian: 1
+          });
+      	$('.form_date').datetimepicker({
+              language:  'es',
+              weekStart: 1,
+              todayBtn:  1,
+      		autoclose: 1,
+      		todayHighlight: 1,
+      		startView: 2,
+      		minView: 2,
+      		forceParse: 0
+          });
+      	$('.form_time').datetimepicker({
+              language:  'es',
+              weekStart: 1,
+              todayBtn:  1,
+      		autoclose: 1,
+      		todayHighlight: 1,
+      		startView: 1,
+      		minView: 1,
+      		maxView: 1,
+      		forceParse: 0
+          });
+      </script>
+
     </body>
 
   </html>

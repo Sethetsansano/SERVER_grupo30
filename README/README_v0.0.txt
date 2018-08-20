@@ -1,13 +1,13 @@
-﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gesti�n de SansaTour".
+﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
-Supuestos del sistema de gesti�n:
+Supuestos del sistema de gestión:
   1.-
 
 Como esta originalmente armado:
   1.- Sistema:
     a) Windows 8.1 64 bits.
-    b) PHP versi�n 7.2.7.
-    c) XAMPP versi�n windows 7.2.7.
+    b) PHP versión 7.2.7.
+    c) XAMPP versión windows 7.2.7.
     d) PostgreSQL versi�n 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
     e) Atom.io (link: https://atom.io/).
     f) HTML 5.
