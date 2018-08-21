@@ -1,4 +1,4 @@
-﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
+Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
 Supuestos del sistema de gestión:
   1.-
@@ -38,7 +38,7 @@ Como reconstruirlo desde otro computador o servidor:
 
 1.Colocar archivos en los diferentes programas:
 	-Colocar los archivos de "Templates" en la carpeta.......
-	
+
 
 1.Instrucciones para tener acceso a la base de datos:
 
@@ -57,7 +57,7 @@ Como reconstruirlo desde otro computador o servidor:
 	-Entrar al administrador de la base de datos (en caso de postgreSQL: "pgAdmin").
 	-En la seccion de "Browser", hacer click derecho en "Servers", luego seleccionar en "Create", luego seleccionar "Server...".
 	-Ahora en la pestaña emergente se configurara el server de la base de datos, guarde los, siguientes datos que ingrese en algun lugar.
-	-Ingresar a la pestaña "General".	
+	-Ingresar a la pestaña "General".
 	-En "Name", colocar el nombre del servidor.
 	-En "Server group", coloca el grupo de servidores en que guardar el servidor.
 	-Entrar a la pestaña "Connection".
@@ -73,19 +73,21 @@ Como reconstruirlo desde otro computador o servidor:
 	-Guardar la base de datos con el boton "Save".
 	-Dar doble click en la base de datos para iniciarla.
 	-Para empesar a ingresar scripts, en la base de datos dar click derecho y seleccionar "CREATE Script".
-	
+
 3.Cargar datos en la base de datos:
 	-En el "CREATE script".
 	-Seleccionar "Open file" (su icono es una carpeta, suele estar arriba a la izquierda).
 	-Seleccionar el archivo "modelo.sql" en la carpeta "SQL" de los archivos de SansaTour.
-	-Si se van a agregar las tablas, seleccionar los "CREATE TABLE" y presionar "execute".
-	-Si se van a remplazar las tablas, sin seleccionar, presionar "execute".
-	-Si se van a borrar las tablas, seleccionar los "DROP TABLE" y presionar "execute".
+	-Si se van a agregar las tablas (solo para tablas no existentes), seleccionar los "CREATE TABLE" y presionar "execute".
+	-Si se van a remplazar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y "CREATE TABLE", presionar "execute".
+	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
+	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas), seleccionar los "INSERT INTO" y presionar "execute".
+
 
 4.Agregar datos a las tablas de la base de datos:
 
 
-	
+
 
 
 
