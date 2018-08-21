@@ -1,5 +1,7 @@
 <?php
 function CallConsole($mensaje){
+  return;
+
   $value = GetConfig('Console');
 
   if ($value === null){
