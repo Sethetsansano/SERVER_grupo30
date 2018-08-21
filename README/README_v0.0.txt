@@ -81,7 +81,7 @@ Como reconstruirlo desde otro computador o servidor:
 	-Si se van a agregar las tablas (solo para tablas no existentes), seleccionar los "CREATE TABLE" y presionar "execute".
 	-Si se van a remplazar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y "CREATE TABLE", presionar "execute".
 	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
-	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas), seleccionar los "INSERT INTO" y presionar "execute".
+	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas, cuidado de no repetir algun INSERT INTO), seleccionar los "INSERT INTO" y presionar "execute".
 
 
 4.Agregar datos a las tablas de la base de datos:
