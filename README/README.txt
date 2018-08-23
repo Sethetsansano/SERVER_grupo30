@@ -2,6 +2,16 @@
 
 Supuestos del sistema de gestión:
   1.-
+  
+Modificaciones a modelo presentado:
+	-Con respecto al modelo presentado, se realizaron dos cambios en los atributos de las tablas Recorridos y Turnos.
+		-Para Recorridos:
+			-Se almacenaba el dato de llegada estimada como un INT, el cual se pretendía sumar a la hora de salida del bus, sin embargo, este atributo se elimino, y a su vez, el atributo fecha_salida se cambio por horario_salida del tipo TIMESTAMP, para almacenar la fecha y hora de salida del recorrido. Lo mismo se hizo para el atributo llegada_estimada.
+			
+		-Para Turnos:
+			-Se elimino el atributo dia de la tabla, dejando que el atributo hora_inicio del tipo TIMESTAMP maneje la información de la fecha y hora de comienzo del turno.
+	
+
 
 Como esta originalmente armado:
   1.- Sistema:
@@ -96,13 +106,3 @@ Como reconstruirlo desde otro computador o servidor:
 
  8.Acceder como gerente 0:
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
-
-
- 9.Modificaciones a modelo presentado:
-	-Con respecto al modelo presentado, se realizaron dos cambios en los atributos de las tablas Recorridos y Turnos.
-		-Para Recorridos:
-			-Se almacenaba el dato de llegada estimada como un INT, el cual se pretendía sumar a la hora de salida del bus, sin embargo, este atributo se elimino, y a su vez, el atributo fecha_salida se cambio por horario_salida del tipo TIMESTAMP, para almacenar la fecha y hora de salida del recorrido. Lo mismo se hizo para el atributo llegada_estimada.
-			
-		-Para Turnos:
-			-Se elimino el atributo dia de la tabla, dejando que el atributo hora_inicio del tipo TIMESTAMP maneje la información de la fecha y hora de comienzo del turno.
-	
