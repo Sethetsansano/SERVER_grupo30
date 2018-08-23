@@ -108,7 +108,7 @@
 	-Tener activo la base de datos, el servidor php, los archivos "Templates" en el "xampp/htdocs/" y las configuraciones previas. 
 	-Usar el siguiente URL: 
 		http://localhost/SansaTour.php
-	-Si no se encuetra la pagina (error 404), ingresar http://localhost/ seguido de la parte de la direccion de SansaTour.php que sea lo siguiente a .../xampp/htdocs/ más el nombre SansaTour.php , ejemplo: con la direccion del archivo C:/xampp/htdocs/grupo30/SansaTour.php , ingresar: http://localhost/grupo30/SansaTour.php 		
+	*Nota: Si no se encuetra la pagina (error 404) al tener los archivos en una subcarpeta, ingresar http://localhost/ seguido de la parte de la direccion de SansaTour.php que sea lo siguiente a .../xampp/htdocs/ más el nombre SansaTour.php , ejemplo: con la direccion del archivo C:/xampp/htdocs/grupo30/SansaTour.php , ingresar: http://localhost/grupo30/SansaTour.php 		
 
  4.9> Acceder como gerente 0:
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
