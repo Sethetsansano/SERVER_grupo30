@@ -1,4 +1,4 @@
-Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
+﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
 Supuestos del sistema de gestión:
   1.-
@@ -8,22 +8,21 @@ Como esta originalmente armado:
     a) Windows 8.1 64 bits.
     b) PHP versión 7.2.7.
     c) XAMPP versión windows 7.2.7.
-    d) PostgreSQL versi�n 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
+    d) PostgreSQL versión 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
     e) Atom.io (link: https://atom.io/).
     f) HTML 5.
-  2.- Archivos:
-    a) SansaTour_Grupo30/main.php:
+  2.- Archivos del servidor php, encontrados en Templates:
+    a) SansaTour.php:
       Archivo principal de la aplicacion, llama al  resto de componentes y los estructura en un formato de HTML.
-    b) SansaTour_Grupo30/codeServer.php:
+    b) codeServer.php:
       Modulo principal de codigo PHP del servidor, es llamado desde el main.php para controlar el server.
-    c) SansaTour_Grupo30/codeClient.js:
+    c) codeClient.js:
       Modulo principal de codigo JavaScript del cliente, es llamado desde el main.php para controlar el comportamiento del cliente de forma independiente del servidor.
-    d) SansaTour_Grupo30/frontend.html:
+    d) frontend.html:
       Modulo principal de codigo HTML, es llamado desde el main.php para gestionar el contenido en el cliente.
-    e) SansaTour_Grupo30/frontend_style.css:
+    e) frontend_style.css:
       Modulo principal de c�digo CSS, es llamado desde el main.php para gestionar el formato visual en el cliente.
-    f) SQL???????
-    g) SansaTour_Grupo30/config.txt:
+    f) config.txt:
       Es el archivo de configuracion del servidor, en este se puede entregar los datos de la DataBase.....
   3.- Base de datos:
     a) La base de datos esta montado en postgreSQL.....
@@ -38,7 +37,6 @@ Como reconstruirlo desde otro computador o servidor:
 
 1.Colocar archivos en los diferentes programas:
 	-Colocar los archivos de "Templates" en la carpeta.......
-
 
 1.Instrucciones para tener acceso a la base de datos:
 
@@ -83,7 +81,6 @@ Como reconstruirlo desde otro computador o servidor:
 	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
 	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas, cuidado de no repetir algun INSERT INTO), seleccionar los "INSERT INTO" y presionar "execute".
 
-
 4.Agregar datos a las tablas de la base de datos:
 
 
@@ -92,29 +89,28 @@ Como reconstruirlo desde otro computador o servidor:
 
 
 
-*Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
-		-Dirigirse a la carpeta xampp/php
-		-Buscar el archivo php.ini
-		-Descomentar las siguientes lineas:
-			extension=pgsql
-			extension=pdo_pgsql
-		-Guardar el archivo
+5.Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
+	-Dirigirse a la carpeta xampp/php
+	-Buscar el archivo php.ini
+	-Descomentar las siguientes lineas:
+		extension=pgsql
+		extension=pdo_pgsql
+	-Guardar el archivo
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
 
+6.Configurar servidor de SansaTour:
+	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
+	-Mantener la estructura de "variable = valor;" para cada linea
+	-Mantener mayusculas y minusculas cuando corresponda.
+	-Para confirurar la coneccion a la base de datos:
+	-En DataBaseName, ingresar el nombre la base de datos.
+    	-En DataBaseAddress, ingresar el IP address de la base de datos, si esta se encuentra en el computador actual ingresar 127.0.0.1 como direccion o usar el "host address" que se encuentra en las propiedades del servidor en la pestaña de coneccion.
+    	-En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de coneccion del servidor que contenga la base de datos a usar.
+    	-En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
+    	-En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
 
-*Configurar servidor de SansaTour:
-  -Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
-  -Mantener la estructura de "variable = valor;" para cada linea
-  -Mantener mayusculas y minusculas cuando corresponda.
-  -Para confirurar la coneccion a la base de datos:
-    -En DataBaseName, ingresar el nombre la base de datos.
-    -En DataBaseAddress, ingresar el IP address de la base de datos, si esta se encuentra en el computador actual ingresar 127.0.0.1 como direccion o usar el "host address" que se encuentra en las propiedades del servidor en la pestaña de coneccion.
-    -En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de coneccion del servidor que contenga la base de datos a usar.
-    -En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
-    -En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
+7.Acceder a la pagina web:
+	-Ingresar a ..../Templates/SansaTour.php
 
-*Acceder a la pagina web:
-   -Ingresar a ..../Templates/SansaTour.php
-
-*Acceder como gerente 0:
+8.Acceder como gerente 0:
 	-usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
