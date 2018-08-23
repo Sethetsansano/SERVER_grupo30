@@ -48,7 +48,7 @@
 		host    all             all             0.0.0.0/0               md5
 	-Guardar el archivo.
 
- 2.Crear desde 0 nueva base de datos:
+ 4.3> Crear desde 0 nueva base de datos:
 	-Entrar al administrador de la base de datos (en caso de postgreSQL: "pgAdmin").
 	-En la sección de "Browser", hacer click derecho en "Servers", luego seleccionar en "Create", luego seleccionar "Server...".
 	-Ahora en la pestaña emergente se configurará el server de la base de datos, guarde los siguientes datos que ingrese en algun lugar.
@@ -69,7 +69,7 @@
 	-Dar doble click en la base de datos para iniciarla.
 	-Para empezar a ingresar scripts, en la base de datos dar click derecho y seleccionar "CREATE Script".
 
- 3.Cargar datos en la base de datos:
+ 4.4> Cargar datos en la base de datos:
 	-En el "CREATE script".
 	-Seleccionar "Open file" (su icono es una carpeta, suele estar arriba a la izquierda).
 	-Seleccionar el archivo "modelo.sql" en la carpeta "SQL" de los archivos de SansaTour.
@@ -78,10 +78,10 @@
 	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
 	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas, cuidado de no repetir algun INSERT INTO), seleccionar los "INSERT INTO" y presionar "execute".
 
- 4.Agregar datos a las tablas de la base de datos:
+ 4.5> Agregar datos a las tablas de la base de datos:
 	-En el archivo "modelo.sql" se encuentra una serie de datos de prueba para cada tabla del modelo, por lo que si se desean agregar más, se puede seguir el formato que tienen esas instrucciones.
 	
- 5.Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
+ 4.6> Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
 	-Dirigirse a la carpeta xampp/php
 	-Buscar el archivo php.ini
 	-Descomentar las siguientes lineas:
@@ -90,7 +90,7 @@
 	-Guardar el archivo
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
 
- 6.Configurar servidor de SansaTour:
+ 4.7> Configurar servidor de SansaTour:
 	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
 	-Mantener la estructura de "variable = valor;" para cada línea
 	-Mantener mayúsculas y minúsculas cuando corresponda.
@@ -101,8 +101,8 @@
     	-En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
     	-En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
 
- 7.Acceder a la pagina web:
+ 4.8> Acceder a la pagina web:
 	-Ingresar a ..../Templates/SansaTour.php
 
- 8.Acceder como gerente 0:
+ 4.9> Acceder como gerente 0:
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
