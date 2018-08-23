@@ -117,7 +117,7 @@
 	- Para agregar empleados del tipo 'Conductor', 'Auxiliar', 'Gerente', se le delego la responsabilidad al DBA y no será manejado a traves de la aplicación Web
 	- Para poder realizar esta operación, será necesario crear una nueva cuenta de usuario (la cual se puede realizar mediante la aplicación Web) o utilizar un usuario ya existente.
 	- Para esto, es necesario saber las personas que se encuentran registradas:
-		- SELECT * FROM PERSONAS;
+		- SELECT * FROM PERSONAS; //en el caso de que el empleado ya posea una cuenta en la página, de lo contrario crear una cuenta para el empleado.
 	- Luego, para ingresar un nuevo empleado a la empresa, se necesita saber a la agencia que corresponde:
 		- SELECT * FROM Agencias;
 	- Finalmente, para agregar al empleado:
