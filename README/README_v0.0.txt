@@ -36,7 +36,7 @@ Como esta originalmente armado:
 Como reconstruirlo desde otro computador o servidor:
 
  1.Colocar archivos en los diferentes programas:
-	-Colocar los archivos de "Templates" en la carpeta.......
+	-Colocar los archivos dentro de "Templates" en la carpeta del directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
 
  1.Instrucciones para tener acceso a la base de datos:
 
