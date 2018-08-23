@@ -15,12 +15,12 @@ Modificaciones a modelo presentado:
 
 Como esta originalmente armado:
   1.- Sistema:
-    a) Windows 8.1 64 bits.
-    b) PHP versión 7.2.7.
-    c) XAMPP versión windows 7.2.7.
-    d) PostgreSQL versión 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
-    e) Atom.io (link: https://atom.io/).
-    f) HTML 5.
+    	a) Windows 8.1 64 bits.
+    	b) PHP versión 7.2.7.
+    	c) XAMPP versión windows 7.2.7.
+    	d) PostgreSQL versión 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
+    	e) Atom.io (link: https://atom.io/).
+    	f) HTML 5.
   2.- Base de datos:
     	a) La base de datos esta montado en postgreSQL.
 		b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
