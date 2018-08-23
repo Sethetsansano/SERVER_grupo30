@@ -102,7 +102,11 @@
     	-En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
 
  4.8> Acceder a la pagina web:
-	-Ingresar a ..../Templates/SansaTour.php
+	-Entrar al navegador web (en preferencia chrome).
+	-Tener activo la base de datos, el servidor php, los archivos "Templates" en el "xampp/htdocs/" y las configuraciones previas. 
+	-Usar el siguiente URL: 
+		http://localhost/SansaTour.php
+	-Si no se encuetra la pagina (error 404), ingresar http://localhost/ seguido de la parte de la direccion de SansaTour.php que sea lo siguiente a .../xampp/htdocs/ más el nombre SansaTour.php , ejemplo: con la direccion del archivo C:/xampp/htdocs/grupo30/SansaTour.php , ingresar: http://localhost/grupo30/SansaTour.php 		
 
  4.9> Acceder como gerente 0:
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
