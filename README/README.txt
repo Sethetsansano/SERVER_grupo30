@@ -32,7 +32,7 @@
     	b) Los archivos de la aplicación web, encontrados en la carpeta "Templates", deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
     	c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost:8080/SansaTour.php
 
-4>Como reconstruirlo desde otro computador o servidor:
+4> Como reconstruirlo desde otro computador o servidor:
 
  4.1> Colocar archivos en los diferentes programas:
 	-Colocar los archivos dentro de "Templates" en la carpeta del directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
