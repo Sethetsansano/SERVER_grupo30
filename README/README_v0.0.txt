@@ -26,7 +26,7 @@ Como esta originalmente armado:
       		Es el archivo de configuracion del servidor, en este se puede entregar los datos de la DataBase.....
   3.- Base de datos:
     	a) La base de datos esta montado en postgreSQL.
-	b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
+		b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
 	
   4.- Servidor php:
     	a) El servidor PHP esta montado en el programa XAMPP, activando el modulo de APACHE.
@@ -53,14 +53,14 @@ Como reconstruirlo desde otro computador o servidor:
 
  2.Crear desde 0 nueva base de datos:
 	-Entrar al administrador de la base de datos (en caso de postgreSQL: "pgAdmin").
-	-En la seccion de "Browser", hacer click derecho en "Servers", luego seleccionar en "Create", luego seleccionar "Server...".
-	-Ahora en la pestaña emergente se configurara el server de la base de datos, guarde los, siguientes datos que ingrese en algun lugar.
+	-En la sección de "Browser", hacer click derecho en "Servers", luego seleccionar en "Create", luego seleccionar "Server...".
+	-Ahora en la pestaña emergente se configurará el server de la base de datos, guarde los siguientes datos que ingrese en algun lugar.
 	-Ingresar a la pestaña "General".
 	-En "Name", colocar el nombre del servidor.
-	-En "Server group", coloca el grupo de servidores en que guardar el servidor.
+	-En "Server group", colocar el grupo de servidores en que se guardara el servidor.
 	-Entrar a la pestaña "Connection".
 	-En "Host name/address", colocar "127.0.0.1".
-	-En el "Port", colocar el numero de port a usar, este valor debe ser unico en el sistema (que ningun otro programa lo este usando) y usar valores entre 5001 y 14999.
+	-En el "Port", colocar el numero de port a usar, este valor debe ser único en el sistema (que ningún otro programa lo este usando) y usar valores entre 5001 y 14999.
 	-En "Username", colocar el usuario que tenga privilegios y que sea el admin del server.
 	-Guardar base de datos con el boton "Save".
 	-En "Browser", entrar al grupo de servers del server de la base de datos, luego dar doble click y en la ventana emergente agregar la clave del usuario administrador y dar al boton "Ok", con ello se accede al servidor.
@@ -70,14 +70,14 @@ Como reconstruirlo desde otro computador o servidor:
 	-En "Owner", colocar al usuario propietario, se puede usar el mismo de el servidor.
 	-Guardar la base de datos con el boton "Save".
 	-Dar doble click en la base de datos para iniciarla.
-	-Para empesar a ingresar scripts, en la base de datos dar click derecho y seleccionar "CREATE Script".
+	-Para empezar a ingresar scripts, en la base de datos dar click derecho y seleccionar "CREATE Script".
 
  3.Cargar datos en la base de datos:
 	-En el "CREATE script".
 	-Seleccionar "Open file" (su icono es una carpeta, suele estar arriba a la izquierda).
 	-Seleccionar el archivo "modelo.sql" en la carpeta "SQL" de los archivos de SansaTour.
 	-Si se van a agregar las tablas (solo para tablas no existentes), seleccionar los "CREATE TABLE" y presionar "execute".
-	-Si se van a remplazar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y "CREATE TABLE", presionar "execute".
+	-Si se van a reemplazar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y "CREATE TABLE", presionar "execute".
 	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
 	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas, cuidado de no repetir algun INSERT INTO), seleccionar los "INSERT INTO" y presionar "execute".
 
@@ -100,12 +100,12 @@ Como reconstruirlo desde otro computador o servidor:
 
  6.Configurar servidor de SansaTour:
 	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
-	-Mantener la estructura de "variable = valor;" para cada linea
-	-Mantener mayusculas y minusculas cuando corresponda.
-	-Para confirurar la coneccion a la base de datos:
-	-En DataBaseName, ingresar el nombre la base de datos.
-    	-En DataBaseAddress, ingresar el IP address de la base de datos, si esta se encuentra en el computador actual ingresar 127.0.0.1 como direccion o usar el "host address" que se encuentra en las propiedades del servidor en la pestaña de coneccion.
-    	-En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de coneccion del servidor que contenga la base de datos a usar.
+	-Mantener la estructura de "variable = valor;" para cada línea
+	-Mantener mayúsculas y minúsculas cuando corresponda.
+	-Para configurar la conexión a la base de datos:
+	-En DataBaseName, ingresar el nombre de la base de datos.
+    	-En DataBaseAddress, ingresar el IP address de la base de datos, si esta se encuentra en el computador actual ingresar 127.0.0.1 como dirección o usar el "host address" que se encuentra en las propiedades del servidor en la pestaña de conexión.
+    	-En DataBasePort, ingresar el puerto del servidor de la base se datos, este se encuentra en las propiedades en la pestaña de conexión del servidor que contenga la base de datos a usar.
     	-En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
     	-En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
 
@@ -113,4 +113,4 @@ Como reconstruirlo desde otro computador o servidor:
 	-Ingresar a ..../Templates/SansaTour.php
 
  8.Acceder como gerente 0:
-	-usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
+	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
