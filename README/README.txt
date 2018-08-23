@@ -1,13 +1,9 @@
 ﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
-<<<<<<< HEAD
 1> Supuestos del sistema de gestión:
-  1.1-
-=======
-Supuestos del sistema de gestión:
-  1.-
-  
-Modificaciones a modelo presentado:
+
+
+2> Modificaciones a modelo presentado:
 	-Con respecto al modelo presentado, se realizaron dos cambios en los atributos de las tablas Recorridos y Turnos.
 		-Para Recorridos:
 			-Se almacenaba el dato de llegada estimada como un INT, el cual se pretendía sumar a la hora de salida del bus, sin embargo, este atributo se elimino, y a su vez, el atributo fecha_salida se cambio por horario_salida del tipo TIMESTAMP, para almacenar la fecha y hora de salida del recorrido. Lo mismo se hizo para el atributo llegada_estimada.
@@ -16,31 +12,30 @@ Modificaciones a modelo presentado:
 			-Se elimino el atributo dia de la tabla, dejando que el atributo hora_inicio del tipo TIMESTAMP maneje la información de la fecha y hora de comienzo del turno.
 	
 
->>>>>>> 0e5fbd85ede73fc72dc98599ed920f74741c2d6e
 
-2> Como esta originalmente armado:
-  2.1> Sistema:
+3> Como esta originalmente armado:
+  3.1> Sistema:
     	a) Windows 8.1 64 bits.
     	b) PHP versión 7.2.7.
     	c) XAMPP versión windows 7.2.7.
     	d) PostgreSQL versión 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
     	e) Atom.io (link: https://atom.io/).
     	f) HTML 5.
-  2.2> Base de datos:
+  3.2> Base de datos:
     	a) La base de datos esta montado en postgreSQL.
 	b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
 	
-  2.3> Servidor php:
+  3.3> Servidor php:
     	a) El servidor PHP esta montado en el programa XAMPP, activando el modulo de APACHE.
     	b) Los archivos de la aplicación web, encontrados en la carpeta "Templates", deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
     	c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost:8080/SansaTour.php
 
-3>Como reconstruirlo desde otro computador o servidor:
+4>Como reconstruirlo desde otro computador o servidor:
 
- 3.1> Colocar archivos en los diferentes programas:
+ 4.1> Colocar archivos en los diferentes programas:
 	-Colocar los archivos dentro de "Templates" en la carpeta del directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
 
- 3.2> Instrucciones para tener acceso a la base de datos:
+ 4.2> Instrucciones para tener acceso a la base de datos:
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
