@@ -112,3 +112,6 @@
 
  4.9> Acceder como gerente 0:
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
+ 
+ 4.10> Agregar empleados a la BD
+	- Para agregar empleados del tipo 'Conductor', 'Auxiliar', 'Gerente'
