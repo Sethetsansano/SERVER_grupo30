@@ -1,31 +1,31 @@
 ﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
-Supuestos del sistema de gestión:
-  1.-
+1> Supuestos del sistema de gestión:
+  1.1-
 
-Como esta originalmente armado:
-  1.- Sistema:
+2> Como esta originalmente armado:
+  2.1> Sistema:
     	a) Windows 8.1 64 bits.
     	b) PHP versión 7.2.7.
     	c) XAMPP versión windows 7.2.7.
     	d) PostgreSQL versión 10.4 64 bits (link: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
     	e) Atom.io (link: https://atom.io/).
     	f) HTML 5.
-  2.- Base de datos:
+  2.2> Base de datos:
     	a) La base de datos esta montado en postgreSQL.
-		b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
+	b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
 	
-  3.- Servidor php:
+  2.3> Servidor php:
     	a) El servidor PHP esta montado en el programa XAMPP, activando el modulo de APACHE.
     	b) Los archivos de la aplicación web, encontrados en la carpeta "Templates", deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
     	c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost:8080/SansaTour.php
 
-Como reconstruirlo desde otro computador o servidor:
+3>Como reconstruirlo desde otro computador o servidor:
 
- 1.Colocar archivos en los diferentes programas:
+ 3.1> Colocar archivos en los diferentes programas:
 	-Colocar los archivos dentro de "Templates" en la carpeta del directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
 
- 1.Instrucciones para tener acceso a la base de datos:
+ 3.2> Instrucciones para tener acceso a la base de datos:
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
