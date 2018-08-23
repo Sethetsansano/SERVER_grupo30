@@ -114,4 +114,14 @@
 	-Usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
  
  4.10> Agregar empleados a la BD
-	- Para agregar empleados del tipo 'Conductor', 'Auxiliar', 'Gerente'
+	- Para agregar empleados del tipo 'Conductor', 'Auxiliar', 'Gerente', se le delego la responsabilidad al DBA y no será manejado a traves de la aplicación Web
+	- Para poder realizar esta operación, será necesario crear una nueva cuenta de usuario (la cual se puede realizar mediante la aplicación Web) o utilizar un usuario ya existente.
+	- Para esto, es necesario saber las personas que se encuentran registradas:
+		- SELECT * FROM PERSONAS;
+	- Luego, para ingresar un nuevo empleado a la empresa, se necesita saber a la agencia que corresponde:
+		- SELECT * FROM Agencias;
+	- Finalmente, para agregar al empleado:
+		- INSERT INTO Empleados VALUES (MAX(ID_empleado), '<TipoEmpleado>', <ID_cuenta>, <ID_agencia>);
+		- <TipoEmpleado> corresponde a uno de los siguientes valores: 'Gerente', 'Conductor', 'Auxiliar'.
+		- <ID_cuenta> corresponde a la ID de la cuenta del usuario que se agregará como empleado (debe existir en la BD).
+		- <ID_agencia> corresponde a la ID de la agencia a la que corresponde el empleado (debe existir en la BD).
