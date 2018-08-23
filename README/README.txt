@@ -93,7 +93,7 @@
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
 
  4.7> Configurar servidor de SansaTour:
-	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
+	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates (no recomendado usar block de notas, este crea un punto invisible al inicio del archivo).
 	-Mantener la estructura de "variable = valor;" para cada línea
 	-Mantener mayúsculas y minúsculas cuando corresponda.
 	-Para configurar la conexión a la base de datos:
