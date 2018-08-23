@@ -12,33 +12,33 @@ Como esta originalmente armado:
     e) Atom.io (link: https://atom.io/).
     f) HTML 5.
   2.- Archivos del servidor php, encontrados en Templates:
-    a) SansaTour.php:
-      Archivo principal de la aplicacion, llama al  resto de componentes y los estructura en un formato de HTML.
-    b) codeServer.php:
-      Modulo principal de codigo PHP del servidor, es llamado desde el main.php para controlar el server.
-    c) codeClient.js:
-      Modulo principal de codigo JavaScript del cliente, es llamado desde el main.php para controlar el comportamiento del cliente de forma independiente del servidor.
-    d) frontend.html:
-      Modulo principal de codigo HTML, es llamado desde el main.php para gestionar el contenido en el cliente.
-    e) frontend_style.css:
-      Modulo principal de c�digo CSS, es llamado desde el main.php para gestionar el formato visual en el cliente.
-    f) config.txt:
-      Es el archivo de configuracion del servidor, en este se puede entregar los datos de la DataBase.....
+    	a) SansaTour.php:
+      		Archivo principal de la aplicacion, llama al  resto de componentes y los estructura en un formato de HTML.
+    	b) codeServer.php:
+      		Modulo principal de codigo PHP del servidor, es llamado desde el main.php para controlar el server.
+    	c) codeClient.js:
+      		Modulo principal de codigo JavaScript del cliente, es llamado desde el main.php para controlar el comportamiento del cliente de forma independiente del servidor.
+    	d) frontend.html:
+      		Modulo principal de codigo HTML, es llamado desde el main.php para gestionar el contenido en el cliente.
+    	e) frontend_style.css:
+      		Modulo principal de codigo CSS, es llamado desde el main.php para gestionar el formato visual en el cliente.
+    	f) config.txt:
+      		Es el archivo de configuracion del servidor, en este se puede entregar los datos de la DataBase.....
   3.- Base de datos:
-    a) La base de datos esta montado en postgreSQL.....
+    	a) La base de datos esta montado en postgreSQL.
+	b) Los scripts de la base de datos se encuentra en la carpeta "SQL", en el archivo "modelo.sql", en este se encuentras las tablas, las eliminaciones de tablas y los datos de prueba.
+	
   4.- Servidor php:
-    a) El servidor PHP esta montado en el programa XAMPP, activando el modulo de APACHE.
-    b) Los archivos de la aplicación web deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
-    c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost/SansaTour.php
-
-
+    	a) El servidor PHP esta montado en el programa XAMPP, activando el modulo de APACHE.
+    	b) Los archivos de la aplicación web, encontrados en la carpeta "Templates", deben copiarse en el directorio de la instalación de XAMPP, en la carpeta  ("...\xampp\htdocs\").
+    	c) Para acceder al sitio web, ingresar la siguiente dirección en el explorador: localhost:8080/SansaTour.php
 
 Como reconstruirlo desde otro computador o servidor:
 
-1.Colocar archivos en los diferentes programas:
+ 1.Colocar archivos en los diferentes programas:
 	-Colocar los archivos de "Templates" en la carpeta.......
 
-1.Instrucciones para tener acceso a la base de datos:
+ 1.Instrucciones para tener acceso a la base de datos:
 
 	-Dirigirse a la carpeta de instalación de PostgreSQL (PostgreSQL\10\data)
 	-Abrir el archivo postgresql.conf
@@ -51,7 +51,7 @@ Como reconstruirlo desde otro computador o servidor:
 		host    all             all             0.0.0.0/0               md5
 	-Guardar el archivo.
 
-2.Crear desde 0 nueva base de datos:
+ 2.Crear desde 0 nueva base de datos:
 	-Entrar al administrador de la base de datos (en caso de postgreSQL: "pgAdmin").
 	-En la seccion de "Browser", hacer click derecho en "Servers", luego seleccionar en "Create", luego seleccionar "Server...".
 	-Ahora en la pestaña emergente se configurara el server de la base de datos, guarde los, siguientes datos que ingrese en algun lugar.
@@ -72,7 +72,7 @@ Como reconstruirlo desde otro computador o servidor:
 	-Dar doble click en la base de datos para iniciarla.
 	-Para empesar a ingresar scripts, en la base de datos dar click derecho y seleccionar "CREATE Script".
 
-3.Cargar datos en la base de datos:
+ 3.Cargar datos en la base de datos:
 	-En el "CREATE script".
 	-Seleccionar "Open file" (su icono es una carpeta, suele estar arriba a la izquierda).
 	-Seleccionar el archivo "modelo.sql" en la carpeta "SQL" de los archivos de SansaTour.
@@ -81,7 +81,7 @@ Como reconstruirlo desde otro computador o servidor:
 	-Si se van a borrar las tablas (solo para las tablas existentes), seleccionar los "DROP TABLE" y presionar "execute".
 	-Se se van a agregar los datos de prueba (solo cuando esten todas las tablas, cuidado de no repetir algun INSERT INTO), seleccionar los "INSERT INTO" y presionar "execute".
 
-4.Agregar datos a las tablas de la base de datos:
+ 4.Agregar datos a las tablas de la base de datos:
 
 
 
@@ -89,7 +89,7 @@ Como reconstruirlo desde otro computador o servidor:
 
 
 
-5.Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
+ 5.Para poder habilitar que PHP acepte las instrucciones de PostgreSQL:
 	-Dirigirse a la carpeta xampp/php
 	-Buscar el archivo php.ini
 	-Descomentar las siguientes lineas:
@@ -98,7 +98,7 @@ Como reconstruirlo desde otro computador o servidor:
 	-Guardar el archivo
 	*Nota: Si PHP estaba corriendo es necesario detenerlo y volver a correr.
 
-6.Configurar servidor de SansaTour:
+ 6.Configurar servidor de SansaTour:
 	-Acceder al archivo de ConfigServer.txt dentro de la carpeta templates.
 	-Mantener la estructura de "variable = valor;" para cada linea
 	-Mantener mayusculas y minusculas cuando corresponda.
@@ -109,8 +109,8 @@ Como reconstruirlo desde otro computador o servidor:
     	-En DataBaseUser, ingresar el nombre del administrador de la base de datos con permisos.
     	-En DataBasePassword, ingresar la contraseña del servidor de la base de datos.
 
-7.Acceder a la pagina web:
+ 7.Acceder a la pagina web:
 	-Ingresar a ..../Templates/SansaTour.php
 
-8.Acceder como gerente 0:
+ 8.Acceder como gerente 0:
 	-usando los casos de prueba, se puede acceder como gerente usando el nombre de usuario: "gerente" y clave: "gerente"
