@@ -1,6 +1,8 @@
 ﻿Bienvenido DBA, este documento te permitirá tener un dominio sobre el "Sistema de gestión de SansaTour".
 
 1> Supuestos del sistema de gestión:
+	-Se obvio la necesidad de requerir que el usuario/vendedor ingrese la cantidad de tickets a comprar, ya que con la cantidad de checkbox seleccionado se entregará el detalle correspondiente a su compra.
+	-El tipo de usuario 'Gerente' puede interactuar con el sistema como si fuera un usuario normal aparte de realizar las operaciones especiales de gerente.
 
 
 2> Modificaciones a modelo presentado:
